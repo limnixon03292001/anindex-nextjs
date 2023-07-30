@@ -4,18 +4,13 @@ import React from 'react'
 import styles from './page.module.css'
 import useSWRInfinite from "swr/infinite"
 import Link from 'next/link';
-import { Metadata } from 'next';
+
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 type TopUpcomingAnime = {
     pagination: { has_next_page: Boolean }
 }[]
-
-export const metadata: Metadata = {
-    title: 'Top Upcoming Anime',
-    description: 'The most anticipated anime',
-  }
 
 export default function TopUpcoming() {
     

@@ -1,23 +1,16 @@
 "use client"
 
-import React, { useEffect } from 'react'
+import React from 'react'
 import styles from './page.module.css'
 import Link from 'next/link'
 import useSWRInfinite from "swr/infinite"
 import { FaStar } from 'react-icons/fa'
-import { Metadata } from 'next'
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 type TopAnime = {
     pagination: { has_next_page: Boolean }
 }[]
-
-
-export const metadata: Metadata = {
-  title: 'Top Anime',
-  description: 'Top Anime of All time!',
-}
 
 export default function TopAnime() {
     const { 

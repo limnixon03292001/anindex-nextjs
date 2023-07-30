@@ -4,18 +4,12 @@ import React from 'react'
 import useSWRInfinite from "swr/infinite"
 import styles from './page.module.css'
 import Link from 'next/link'
-import { Metadata } from 'next'
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 type SeasonNowAnime = {
      pagination: { has_next_page: Boolean }
 }[]
-
-export const metadata: Metadata = {
-    title: 'Season Now',
-    description: 'Latest Season this month!',
-}
 
 export default function SeasonNowPage() {
     
